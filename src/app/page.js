@@ -20,7 +20,7 @@ export default function Home() {
     //   <Projects />
     // </div>
 
-    <div className="container mx-auto">
+    <div className=" bg-ebonyClay">
       <div className={barlow.className} >
         <Navbar />
         <Hero />

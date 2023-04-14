@@ -27,8 +27,8 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <h1 id ="projects" className="font-extrabold text-5xl leading-10 my-8 ">Projects</h1>
+    <div className="min-h-screen container mx-auto text-greenish">
+      <h1 id ="projects" className="font-extrabold text-5xl leading-10 my-8 text-greenish">Projects</h1>
       <div className="grid grid-cols-2 auto-cols-auto auto-rows-auto gap-4">
         <motion.div
           className="group relative transition duration-300 ease-in-out backdrop-blur-sm bg-black box w-5/6 h-96"

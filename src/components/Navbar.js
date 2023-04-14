@@ -8,7 +8,7 @@ export const Navbar = () => {
 
   return (
     <div className="max-w-lg ml-auto">
-      <div className="flex justify-between">
+      <div className="flex justify-between text-white">
        
           
         <a href="#" >Home</a>
