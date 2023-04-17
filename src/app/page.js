@@ -20,7 +20,7 @@ export default function Home() {
     //   <Projects />
     // </div>
 
-    <div className=" bg-ebonyClay">
+    <div className="dark:bg-ebonyClay bg-mischka">
       <div className={barlow.className} >
         <Navbar />
         <Hero />

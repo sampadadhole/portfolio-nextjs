@@ -1,62 +1,84 @@
 import Link from "next/link";
-import React from "react";
-
+import Lottie from "lottie-react";
+import darkSvg from "../images/dark-mode-button.json";
+import dark from "../images/dark.json";
+import React, { useEffect, useRef, useState } from "react";
+if (typeof window !== "undefined") import("@lottiefiles/lottie-player");
+import { LottieInteractivity, create } from "@lottiefiles/lottie-interactivity";
+import lottie from "lottie-web";
+import DarkModeToggle from "./DarkModeToggle";
 
 export const Navbar = () => {
-  
-  
+
 
   return (
-    <div className="max-w-lg ml-auto">
-      <div className="flex justify-between text-white">
-       
-          
-        <a href="#" >Home</a>
-        <a href="#about" >About</a>
+    <div className="max-w-lg ml-auto py-4">
+      <div className="flex justify-between dark:text-white text-ebonyClay ">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-       
+        {/* <div className="h-4"> */}
+        <DarkModeToggle />
+          {/* </div> */}
+        
+        {/* <div className="dark-mode">
+          <lottie-player className="darkModeToggle"
+            ref={myRef}
+            id="firstLottie"
+            src="https://assets4.lottiefiles.com/packages/lf20_tbyegho2.json"
+            background="transparent"
+            
+          ></lottie-player>
+        </div> */}
       </div>
     </div>
   );
-  //   return (
-  //     <div className="max-w-lg ml-auto ">
-  //     <div className="flex justify-between mr-7 my-4">
-
-  //       {/* <div> */}
-  //         <Link href="/home">Home</Link>
-
-  //         <Link href="/about">About</Link>
-
-  //         <Link href="/projects">Projects</Link>
-
-  //         <Link href="/contact">Contact</Link>
-  //       {/* </div> */}
-  //     {/* <div >
-  //         <a href="#Home">Home</a>
-  //       </div>
-  //       <div>
-  //         <a href="#About">About</a>
-  //       </div>
-
-  //       <div>
-  //         <a href="#Experience">Projects</a>
-  //       </div>
-  //       <div>
-  //         <a href="#Projects">Contact</a>
-  //       </div> */}
-
-  //       {/* <div>
-  //         <a target="_blank" href="https://www.linkedin.com/in/sampada-dhole/">
-  //           Linkedin
-  //         </a>
-  //       </div> */}
-
-  //       {/* <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-  // Button
-  // </button> */}
-
-  //     </div>
-  //   </div>
-  //   )
 };
+
+// export default Navbar;
+
+// export class Navbar extends React.Component {
+
+//   // const [isDarkMode, setIsDarkMode] = useState(false);
+
+//   constructor(props) {
+//     super(props);
+//     this.myRef = React.createRef();
+//   }
+
+//   componentDidMount() {
+//     this.myRef.current.addEventListener("load", function (e) {
+//       create({
+//         player: "#firstLottie",
+//         mode: "cursor",
+//         actions: [
+//           {
+//             type: "click",
+//             forceFlag: false,
+//           },
+//         ],
+//       });
+//     });
+//   }
+
+//   render() {
+//     return (
+//       <div className="max-w-lg ml-auto">
+//         <div className="flex justify-between text-white">
+//           <a href="#">Home</a>
+//           <a href="#about">About</a>
+//           <a href="#projects">Projects</a>
+//           <a href="#contact">Contact</a>
+//           <div className="w-14">
+//             <lottie-player
+//               ref={this.myRef}
+//               id="firstLottie"
+//               src="https://assets4.lottiefiles.com/packages/lf20_tbyegho2.json"
+//             ></lottie-player>
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   }
+// }

@@ -5,7 +5,7 @@ import rotate from "../images/rotate.png";
 
 const About = () => {
   return (
-    <div id="about" className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between min-h-screen text-white">
+    <div id="about" className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between min-h-screen dark:text-white text-ebonyClay">
       <div className="relative">
         <Image
           width={500}
@@ -25,11 +25,11 @@ const About = () => {
       </div>
 
       <div className="lg:max-w-xl my-8 p-8">
-        <h3 className="font-extrabold text-xl text-white">ABOUT ME</h3>
+        <h3 className="font-extrabold text-xl dark:text-white text-ebonyClay">ABOUT ME</h3>
         <h1 className="font-extrabold text-2xl tracking-wide text-greenish">
           Passionate Software developer
         </h1>
-        <p className="font-bold text-lg text-slate-300 ">
+        <p className="font-bold text-lg dark:text-slate-300 text-ebonyClay">
           As a Junior Front-End Developer, I possess an impressive arsenal of
           skills in HTML, CSS, JavaScript, React, Tailwind, and SCSS. I excel in
           designing and maintaining responsive websites that offer a smooth user
