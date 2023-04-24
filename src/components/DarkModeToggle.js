@@ -45,7 +45,7 @@ import { useTheme } from 'next-themes'
 
 
 export default function DarkModeToggle() {
-  const [enabled, setEnabled] = useState(false)
+  const [enabled, setEnabled] = useState(true)
   const { theme, setTheme } = useTheme()
 
   useEffect(() => {

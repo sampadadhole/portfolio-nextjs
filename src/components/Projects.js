@@ -1,11 +1,16 @@
 import React from "react";
 // import flight from "../images/flight.jpg";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 // import ikea from "../images/ikea.jpg";
 
 const Projects = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isFlightOpen, setIsFlightOpen] = React.useState(false);
+  const [isIkeaOpen, setIsIkeaOpen] = React.useState(false);
+  const [isPortfolioOpen, setIsPortfolioOpen] = React.useState(false);
+  const [isPetCareOpen, setIsPetCareOpen] = React.useState(false);
+  const [isHealthPlusOpen, setIsHealthPlusOpen] = React.useState(false);
+  const[algotithmOpen, setIsAlgorithmOpen] = React.useState(false);
   const link1 = "Go\nto\nGithub\n→";
   const sentence = {
     hidden: { opacity: 1 },
@@ -26,32 +31,56 @@ const Projects = () => {
     },
   };
 
+  const { scrollYProgress } = useViewportScroll();
+  console.log(scrollYProgress);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1.4]);
+
   return (
-    <div className="min-h-screen container mx-auto text-greenish">
-      <h1 id ="projects" className="font-extrabold text-5xl leading-10 my-8 text-greenish">Projects</h1>
-      <div className="grid grid-cols-2 auto-cols-auto auto-rows-auto gap-4">
+    <div className="min-h-screen container mx-auto text-greenish min-w-min">
+      <h1
+        id="projects"
+        className="font-extrabold text-5xl leading-10 my-8 text-greenish"
+      >
+        Some things I've worked on!
+      </h1>
+      <div className="grid grid-cols-2 ">
         <motion.div
-          className="group relative transition duration-300 ease-in-out backdrop-blur-sm bg-black box w-5/6 h-96"
-          whileHover={{ scale: 1.05 }}
+          className=" group relative transition duration-300 ease-in-out backdrop-blur-sm bg-black box border border-greenish w-4/6 h-96 mx-auto my-8 rounded-xl overflow-hidden shadow-2xl bg-flight bg-cover brightness-75"
+          // whileHover={{ scale: 1.05 }}
           // transition={{damping: [0.1, 0.6, 0.8, 0.6] }}
-          transition={{ type: "spring", duration: 0.1 }}
-          onHoverStart={() => setIsOpen(true)}
-          onHoverEnd={() => setIsOpen(false)}
+          // transition={{ type: "spring", duration: 0.1 }}
+          onHoverStart={() => setIsFlightOpen(true)}
+          onHoverEnd={() => setIsFlightOpen(false)}
+          style={{ scale }}
         >
-          <motion.h3 className="group-hover:text-white absolute text-lg p-4 text-slate-100">
+          <motion.div
+            className="item"
+            style={{
+              scaleY: scrollYProgress,
+            }}
+          />
+          <motion.h3
+            style={{ scale }}
+            className="group-hover:text-white absolute text-lg p-4 text-slate-100 "
+          >
             2022-2023
           </motion.h3>
-          <motion.h1 className="group-hover:text-white absolute text-lg p-4 top-7 text-slate-100">
+          <motion.h1
+            style={{ scale }}
+            className="group-hover:text-white absolute text-lg p-4 top-7 text-slate-100"
+            
+          >
             Flight Booking System
           </motion.h1>
 
-          {isOpen && (
+          {isFlightOpen && (
             <motion.div>
               <motion.h2
-                className="group-hover:text-white absolute p-4 top-14 load-screen-message"
+                className="group-hover:text-white absolute p-4 top-14 load-screen-message cursor-pointer"
                 variants={sentence}
                 initial="hidden"
                 animate="visible"
+               
               >
                 {link1.split(" ").map((char, index) => {
                   return (
@@ -59,6 +88,12 @@ const Projects = () => {
                       key={char + "-" + index}
                       variants={letter}
                       className="inline-block"
+                      onClick={() => {
+                        console.log("clicked");
+                        // <a href="https://github.com/" target="_blank"/>;
+                        window.open("https://github.com/sampadadhole/Flight-Reservation-System", "_blank");
+                        
+                      }}
                     >
                       {char}
                     </motion.span>
@@ -67,89 +102,48 @@ const Projects = () => {
               </motion.h2>
             </motion.div>
           )}
-
-          {/* <Image
-            // width={128}
-            // height={128}
-            src={flight}
-            className=" relative group-hover:opacity-30 group-hover:scale-100"
-            alt="kljk"
-          /> */}
         </motion.div>
+        <div> </div>
+        <div> </div>
 
         {/* next project */}
-
         <motion.div
-          className="group relative transition duration-300 ease-in-out backdrop-blur-sm bg-black box w-5/6 h-96"
-          whileHover={{ scale: 1.05 }}
+          className=" group relative transition duration-300 ease-in-out backdrop-blur-sm bg-black box border border-greenish w-4/6 h-96 mx-auto my-8 rounded-xl overflow-hidden shadow-2xl bg-portfolio bg-cover brightness-75"
+          // whileHover={{ scale: 1.05 }}
           // transition={{damping: [0.1, 0.6, 0.8, 0.6] }}
-          transition={{ type: "spring", duration: 0.1 }}
-          onHoverStart={() => setIsOpen(true)}
-          onHoverEnd={() => setIsOpen(false)}
+          // transition={{ type: "spring", duration: 0.1 }}
+          onHoverStart={() => setIsPortfolioOpen(true)}
+          onHoverEnd={() => setIsPortfolioOpen(false)}
+          style={{ scale }}
         >
-          <motion.h3 className="group-hover:text-white absolute text-lg p-4 text-slate-100">
-            2022-2023
-          </motion.h3>
-          <motion.h1 className="group-hover:text-white absolute text-lg p-4 top-7 text-slate-100">
-            Flight Booking System
-          </motion.h1>
-
-          {isOpen && (
-            <motion.div>
-              <motion.h2
-                className="group-hover:text-white absolute p-4 top-14 load-screen-message"
-                variants={sentence}
-                initial="hidden"
-                animate="visible"
-              >
-                {link1.split(" ").map((char, index) => {
-                  return (
-                    <motion.span
-                      key={char + "-" + index}
-                      variants={letter}
-                      className="inline-block"
-                    >
-                      {char}
-                    </motion.span>
-                  );
-                })}
-              </motion.h2>
-            </motion.div>
-          )}
-
-          {/* <Image
-            // width={128}
-            // height={128}
-            src={ikea}
-            className=" relative group-hover:opacity-30 group-hover:scale-100"
-            alt="kljk"
-          /> */}
-        </motion.div>
-
-
-          {/* {next project} */}
           <motion.div
-          className="group relative transition duration-300 ease-in-out backdrop-blur-sm bg-black box w-5/6 h-96"
-          whileHover={{ scale: 1.05 }}
-          // transition={{damping: [0.1, 0.6, 0.8, 0.6] }}
-          transition={{ type: "spring", duration: 0.1 }}
-          onHoverStart={() => setIsOpen(true)}
-          onHoverEnd={() => setIsOpen(false)}
-        >
-          <motion.h3 className="group-hover:text-white absolute text-lg p-4 text-slate-100">
+            className="item"
+            style={{
+              scaleY: scrollYProgress,
+            }}
+          />
+          <motion.h3
+            style={{ scale }}
+            className="group-hover:text-white absolute text-lg p-4 text-slate-100 "
+          >
             2022-2023
           </motion.h3>
-          <motion.h1 className="group-hover:text-white absolute text-lg p-4 top-7 text-slate-100">
-            Flight Booking System
+          <motion.h1
+            style={{ scale }}
+            className="group-hover:text-white absolute text-lg p-4 top-7 text-slate-100"
+            
+          >
+            Portfolio
           </motion.h1>
 
-          {isOpen && (
+          {isPortfolioOpen && (
             <motion.div>
               <motion.h2
-                className="group-hover:text-white absolute p-4 top-14 load-screen-message"
+                className="group-hover:text-white absolute p-4 top-14 load-screen-message cursor-pointer"
                 variants={sentence}
                 initial="hidden"
                 animate="visible"
+               
               >
                 {link1.split(" ").map((char, index) => {
                   return (
@@ -157,6 +151,12 @@ const Projects = () => {
                       key={char + "-" + index}
                       variants={letter}
                       className="inline-block"
+                      onClick={() => {
+                        console.log("clicked portfolio");
+                        // <a href="https://github.com/" target="_blank"/>;
+                        window.open("https://github.com/sampadadhole/portfolio-nextjs", "_blank");
+                        
+                      }}
                     >
                       {char}
                     </motion.span>
@@ -165,39 +165,47 @@ const Projects = () => {
               </motion.h2>
             </motion.div>
           )}
-
-          {/* <Image
-            // width={128}
-            // height={128}
-            src={ikea}
-            className=" relative group-hover:opacity-30 group-hover:scale-100"
-            alt="kljk"
-          /> */}
         </motion.div>
+        
 
-          {/* {next project} */}
+        {/* {next project} */}
+        <motion.div
+          className=" group relative transition duration-300 ease-in-out backdrop-blur-sm bg-black box border border-greenish w-4/6 h-96 mx-auto my-8 rounded-xl overflow-hidden shadow-2xl bg-petCare bg-cover brightness-75"
+          // whileHover={{ scale: 1.05 }}
+          // transition={{damping: [0.1, 0.6, 0.8, 0.6] }}
+          // transition={{ type: "spring", duration: 0.1 }}
+          onHoverStart={() => setIsPetCareOpen(true)}
+          onHoverEnd={() => setIsPetCareOpen(false)}
+          style={{ scale }}
+        >
           <motion.div
-          className="group relative transition duration-300 ease-in-out backdrop-blur-sm bg-black box w-5/6 h-96"
-          whileHover={{ scale: 1.05 }}
-          // transition={{damping: [0.1, 0.6, 0.8, 0.6] }}
-          transition={{ type: "spring", duration: 0.1 }}
-          onHoverStart={() => setIsOpen(true)}
-          onHoverEnd={() => setIsOpen(false)}
-        >
-          <motion.h3 className="group-hover:text-white absolute text-lg p-4 text-slate-100">
+            className="item"
+            style={{
+              scaleY: scrollYProgress,
+            }}
+          />
+          <motion.h3
+            style={{ scale }}
+            className="group-hover:text-white absolute text-lg p-4 text-slate-100 "
+          >
             2022-2023
           </motion.h3>
-          <motion.h1 className="group-hover:text-white absolute text-lg p-4 top-7 text-slate-100">
-            Flight Booking System
+          <motion.h1
+            style={{ scale }}
+            className="group-hover:text-white absolute text-lg p-4 top-7 text-slate-100"
+            
+          >
+            Pet Care
           </motion.h1>
 
-          {isOpen && (
+          {isPetCareOpen && (
             <motion.div>
               <motion.h2
-                className="group-hover:text-white absolute p-4 top-14 load-screen-message"
+                className="group-hover:text-white absolute p-4 top-14 load-screen-message cursor-pointer"
                 variants={sentence}
                 initial="hidden"
                 animate="visible"
+               
               >
                 {link1.split(" ").map((char, index) => {
                   return (
@@ -205,6 +213,12 @@ const Projects = () => {
                       key={char + "-" + index}
                       variants={letter}
                       className="inline-block"
+                      onClick={() => {
+                        console.log("clicked pet care");
+                        // <a href="https://github.com/" target="_blank"/>;
+                        window.open("https://github.com/sampadadhole/pet-care-reactjs/tree/dev", "_blank");
+                        
+                      }}
                     >
                       {char}
                     </motion.span>
@@ -213,15 +227,194 @@ const Projects = () => {
               </motion.h2>
             </motion.div>
           )}
-
-          {/* <Image
-            // width={128}
-            // height={128}
-            src={ikea}
-            className=" relative group-hover:opacity-30 group-hover:scale-100"
-            alt="kljk"
-          /> */}
         </motion.div>
+
+        <div></div>
+        <div></div>
+        {/* {next project} */}
+        <motion.div
+          className=" group relative transition duration-300 ease-in-out backdrop-blur-sm bg-black box border border-greenish w-4/6 h-96 mx-auto my-8 rounded-xl overflow-hidden shadow-2xl bg-ikea bg-cover brightness-75"
+          // whileHover={{ scale: 1.05 }}
+          // transition={{damping: [0.1, 0.6, 0.8, 0.6] }}
+          // transition={{ type: "spring", duration: 0.1 }}
+          onHoverStart={() => setIsIkeaOpen(true)}
+          onHoverEnd={() => setIsIkeaOpen(false)}
+          style={{ scale }}
+        >
+          <motion.div
+            className="item"
+            style={{
+              scaleY: scrollYProgress,
+            }}
+          />
+          <motion.h3
+            style={{ scale }}
+            className="group-hover:text-white absolute text-lg p-4 text-slate-100 "
+          >
+            2022-2023
+          </motion.h3>
+          <motion.h1
+            style={{ scale }}
+            className="group-hover:text-white absolute text-lg p-4 top-7 text-slate-100"
+            
+          >
+            Ikea Redesign
+          </motion.h1>
+
+          {isIkeaOpen && (
+            <motion.div>
+              <motion.h2
+                className="group-hover:text-white absolute p-4 top-14 load-screen-message cursor-pointer"
+                variants={sentence}
+                initial="hidden"
+                animate="visible"
+               
+              >
+                {link1.split(" ").map((char, index) => {
+                  return (
+                    <motion.span
+                      key={char + "-" + index}
+                      variants={letter}
+                      className="inline-block"
+                      onClick={() => {
+                        console.log("clicked ikea");
+                        // <a href="https://github.com/" target="_blank"/>;
+                        window.open("https://github.com/sampadadhole/Ikea-redesign", "_blank");
+                        
+                      }}
+                    >
+                      {char}
+                    </motion.span>
+                  );
+                })}
+              </motion.h2>
+            </motion.div>
+          )}
+        </motion.div>
+
+        {/* {next project} */}
+        <motion.div
+          className=" group relative transition duration-300 ease-in-out backdrop-blur-sm bg-black box border border-greenish w-4/6 h-96 mx-auto my-8 rounded-xl overflow-hidden shadow-2xl bg-healthPlus bg-cover brightness-75"
+          // whileHover={{ scale: 1.05 }}
+          // transition={{damping: [0.1, 0.6, 0.8, 0.6] }}
+          // transition={{ type: "spring", duration: 0.1 }}
+          onHoverStart={() => setIsHealthPlusOpen(true)}
+          onHoverEnd={() => setIsHealthPlusOpen(false)}
+          style={{ scale }}
+        >
+          <motion.div
+            className="item"
+            style={{
+              scaleY: scrollYProgress,
+            }}
+          />
+          <motion.h3
+            style={{ scale }}
+            className="group-hover:text-white absolute text-lg p-4 text-slate-100 "
+          >
+            2021-2022
+          </motion.h3>
+          <motion.h1
+            style={{ scale }}
+            className="group-hover:text-white absolute text-lg p-4 top-7 text-slate-100"
+            
+          >
+            Health Plus Services
+          </motion.h1>
+
+          {isHealthPlusOpen && (
+            <motion.div>
+              <motion.h2
+                className="group-hover:text-white absolute p-4 top-14 load-screen-message cursor-pointer"
+                variants={sentence}
+                initial="hidden"
+                animate="visible"
+               
+              >
+                {link1.split(" ").map((char, index) => {
+                  return (
+                    <motion.span
+                      key={char + "-" + index}
+                      variants={letter}
+                      className="inline-block"
+                      onClick={() => {
+                        console.log("clicked ikea");
+                        // <a href="https://github.com/" target="_blank"/>;
+                        window.open("https://github.com/sampadadhole/HealthPlus", "_blank");
+                        
+                      }}
+                    >
+                      {char}
+                    </motion.span>
+                  );
+                })}
+              </motion.h2>
+            </motion.div>
+          )}
+        </motion.div>
+
+        <div></div>
+        <div></div>
+        {/* {next project} */}
+        <motion.div
+          className=" group relative transition duration-300 ease-in-out backdrop-blur-sm bg-black box border border-greenish w-4/6 h-96 mx-auto my-8 rounded-xl overflow-hidden shadow-2xl bg-algorithm bg-cover brightness-75"
+          // whileHover={{ scale: 1.05 }}
+          // transition={{damping: [0.1, 0.6, 0.8, 0.6] }}
+          // transition={{ type: "spring", duration: 0.1 }}
+          onHoverStart={() => setIsAlgorithmOpen(true)}
+          onHoverEnd={() => setIsAlgorithmOpen(false)}
+          style={{ scale }}
+        >
+          <motion.div
+            className="item"
+            style={{
+              scaleY: scrollYProgress,
+            }}
+          />
+          <motion.h3
+            style={{ scale }}
+            className="group-hover:text-white absolute text-lg p-4 text-slate-100 "
+          >
+            2021-2022
+          </motion.h3>
+          <motion.h1
+            style={{ scale }}
+            className="group-hover:text-white absolute text-lg p-4 top-7 text-slate-100"
+            
+          >
+            Algorithm Visualizer
+          </motion.h1>
+
+          {algotithmOpen && (
+            <motion.div>
+              <motion.h2
+                className="group-hover:text-white absolute p-4 top-14 load-screen-message cursor-pointer"
+                variants={sentence}
+                initial="hidden"
+                animate="visible"
+               
+              >
+                {link1.split(" ").map((char, index) => {
+                  return (
+                    <motion.span
+                      key={char + "-" + index}
+                      variants={letter}
+                      className="inline-block"
+                      onClick={() => {
+                        console.log("clicked ikea");
+                        window.open("https://github.com/sampadadhole/PSA_Algorithm_Visualizer", "_blank");
+                        
+                      }}
+                    >
+                      {char}
+                    </motion.span>
+                  );
+                })}
+              </motion.h2>
+            </motion.div>
+          )}
+        </motion.div>
+        
       </div>
     </div>
   );

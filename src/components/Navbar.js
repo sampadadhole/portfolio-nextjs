@@ -12,7 +12,7 @@ export const Navbar = () => {
 
 
   return (
-    <div className="max-w-lg ml-auto py-4">
+    <div className="max-w-lg ml-auto py-2">
       <div className="flex justify-between dark:text-white text-ebonyClay ">
         <a href="#">Home</a>
         <a href="#about">About</a>
@@ -22,15 +22,7 @@ export const Navbar = () => {
         <DarkModeToggle />
           {/* </div> */}
         
-        {/* <div className="dark-mode">
-          <lottie-player className="darkModeToggle"
-            ref={myRef}
-            id="firstLottie"
-            src="https://assets4.lottiefiles.com/packages/lf20_tbyegho2.json"
-            background="transparent"
-            
-          ></lottie-player>
-        </div> */}
+       
       </div>
     </div>
   );

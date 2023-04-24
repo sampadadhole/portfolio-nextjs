@@ -5,7 +5,10 @@ import rotate from "../images/rotate.png";
 
 const About = () => {
   return (
-    <div id="about" className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between min-h-screen dark:text-white text-ebonyClay">
+    <div
+      id="about"
+      className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between min-h-screen dark:text-white text-ebonyClay"
+    >
       <div className="relative">
         <Image
           width={500}
@@ -19,13 +22,16 @@ const About = () => {
         <Image
           width={150}
           src={rotate}
-          className="absolute -bottom-10 -right-4 animate-spin-slow shadow-md rounded-full" 
+          className="absolute -bottom-10 -right-4 animate-spin-slow shadow-md rounded-full"
           alt="idfd"
         />
       </div>
 
       <div className="lg:max-w-xl my-8 p-8">
-        <h3 className="font-extrabold text-xl dark:text-white text-ebonyClay">ABOUT ME</h3>
+        <h3 className="font-extrabold text-xl dark:text-white text-ebonyClay">
+          ABOUT ME
+        </h3>
+
         <h1 className="font-extrabold text-2xl tracking-wide text-greenish">
           Passionate Software developer
         </h1>
