@@ -9,6 +9,7 @@ import { useTheme } from "next-themes";
 import download from "../images/download.svg";
 import linkedin from "../images/linkedin.svg";
 import github from "../images/github.svg";
+import Link from 'next/link';
 
 const Contact = () => {
   const { theme } = useTheme();
@@ -35,12 +36,12 @@ const Contact = () => {
         <div className="py-16 mx-8">
           <div>
             {/* <h1 className="font-bold text-3xl leading-10">Email</h1> */}
-            <a
+            <Link
               href="mailto: sampadadhole4@gmail.com"
               className="font-bold text-xl leading-10"
             >
               sampadadhole4@gmail.com
-            </a>
+            </Link>
           </div>
 
           <div className="flex flex-row justify-center m-4">
