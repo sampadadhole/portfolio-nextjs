@@ -41,7 +41,7 @@ const Projects = () => {
         id="projects"
         className="font-extrabold text-5xl leading-10 my-8 text-greenish"
       >
-        Some things I've worked on!
+        Some things Ive worked on!
       </h1>
       <div className="grid grid-cols-2 ">
         <motion.div

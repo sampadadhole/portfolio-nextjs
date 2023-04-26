@@ -70,14 +70,14 @@ const Contact = () => {
             </div>
 
             <div>
-            <a href="/Users/sampadadhole/Desktop/December Resume/Main Resume.pdf" download>
+            <Link href="/Users/sampadadhole/Desktop/December Resume/Main Resume.pdf" >download
             <Image
                 width={30}
                 src={download}
                 className="cursor-pointer"
                 alt="idfd"
               />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
