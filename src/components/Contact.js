@@ -50,6 +50,7 @@ const Contact = () => {
                 src={github}
                 className="cursor-pointer"
                 onClick={() => window.open("https://www.github.com/sampadadhole", "_blank")}
+                alt="idfd"
               />
               {/* <h1 className="font-bold text-3xl leading-10">LinkedIn</h1> */}
               {/* <button>Download</button> */}
@@ -61,6 +62,7 @@ const Contact = () => {
                 src={linkedin}
                 className="cursor-pointer"
                 onClick={() => window.open("https://www.linkedin.com/in/sampada-dhole", "_blank")}
+                alt="idfd"
               />
               {/* <h1 className="font-bold text-3xl leading-10">Resume</h1> */}
               {/* <button>Download</button> */}
@@ -72,6 +74,7 @@ const Contact = () => {
                 width={30}
                 src={download}
                 className="cursor-pointer"
+                alt="idfd"
               />
               </a>
             </div>
