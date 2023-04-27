@@ -15,6 +15,7 @@ const barlow = Barlow({ subsets: ["latin"], weight: "400" });
 export default function Home() {
   return (
     <div className="dark:bg-ebonyClay bg-mischka">
+      <script async src="https://analytics.umami.is/script.js" data-website-id="377bff22-9ef2-4fc0-af4b-0efbf0cd6ce6"></script>
       <div className={barlow.className}>
         <Navbar />
         <Hero />
