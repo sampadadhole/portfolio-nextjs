@@ -27,7 +27,7 @@ const About = () => {
         />
       </div>
 
-      <div className="lg:max-w-xl my-8 p-8">
+      <div className="lg:max-w-xl my-8 p-8" style="max-width: 49rem">
         <h3 className="font-extrabold text-xl dark:text-white text-ebonyClay">
           ABOUT ME
         </h3>
@@ -35,7 +35,7 @@ const About = () => {
         <h1 className="font-extrabold text-2xl tracking-wide text-greenish">
           Passionate Software developer
         </h1>
-        <p className="font-bold text-lg dark:text-slate-300 text-ebonyClay" style="max-width: 49rem;">
+        <p className="font-bold text-lg dark:text-slate-300 text-ebonyClay" >
           Welcome to my portfolio! I&apos;m Sampada Dhole, a passionate and experienced software developer with a Master of Science in Information Systems from Northeastern University. I have honed my skills in various aspects of software development, including application engineering, data management, and user experience design.
 
 <br /> I have a strong background in full-stack web development, with proficiency in a wide range of programming languages and frameworks, including Java, Python, JavaScript, ReactJS, and NodeJS. I have hands-on experience with modern web development tools and methods, and I am skilled in building responsive and user-friendly web applications.
