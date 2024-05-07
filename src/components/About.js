@@ -36,14 +36,15 @@ const About = () => {
           Passionate Software developer
         </h1>
         <p className="font-bold text-lg dark:text-slate-300 text-ebonyClay">
-          As a Junior Front-End Developer, I possess an impressive arsenal of
-          skills in HTML, CSS, JavaScript, React, Tailwind, and SCSS. I excel in
-          designing and maintaining responsive websites that offer a smooth user
-          experience. My expertise lies in crafting dynamic, engaging interfaces
-          through writing clean and optimized code and utilizing cutting-edge
-          development tools and techniques. I am also a team player who thrives
-          in collaborating with cross-functional teams to produce outstanding
-          web applications.
+          Welcome to my website! I'm Sampada Dhole, a passionate and experienced software developer with a Master of Science in Information Systems from Northeastern University. With a GPA of 3.7, I have honed my skills in various aspects of software development, including application engineering, data management, and user experience design.
+
+I have a strong background in full-stack web development, with proficiency in a wide range of programming languages and frameworks, including Java, Python, JavaScript, ReactJS, and NodeJS. I have hands-on experience with modern web development tools and methods, and I am skilled in building responsive and user-friendly web applications.
+
+Throughout my career, I have worked on a variety of projects, ranging from database migration and optimization to the development of microservices-based web applications. I have a proven track record of delivering high-quality software solutions that meet both user and business needs, and I am committed to continuous learning and professional development.
+
+I am passionate about using technology to drive positive change and improve people's lives, and I am excited about the opportunity to contribute to innovative projects that have a real impact.
+
+Feel free to explore my portfolio and connect with me on LinkedIn to learn more about my work and experience.
         </p>
       </div>
     </div>
