@@ -27,7 +27,7 @@ const About = () => {
         />
       </div>
 
-      <div className="lg:max-w-xl my-8 p-8">
+      <div style="max-width: 49rem;" className="lg:max-w-xl my-8 p-8">
         <h3 className="font-extrabold text-xl dark:text-white text-ebonyClay">
           ABOUT ME
         </h3>
