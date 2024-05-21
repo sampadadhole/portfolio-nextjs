@@ -70,7 +70,7 @@ const Contact = () => {
             </div>
 
             <div>
-            <Link href="/Users/sampadadhole/Desktop/December Resume/Main Resume.pdf" download>
+            <Link href="/Resume_SampadaDhole.pdf" download>
             <Image
                 width={30}
                 src={download}
