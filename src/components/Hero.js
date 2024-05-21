@@ -26,9 +26,6 @@ const Hero = () => {
             Management
           </p>
         </div>
-        <div>
-          <button className="font-medium text-lg">Read about me</button>
-        </div>
       </div>
       <div>
         <Image width={400} className="landing-pic shadow-md" src={me} alt="Sdfd" />
