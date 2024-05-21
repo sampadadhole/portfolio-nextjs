@@ -27,7 +27,7 @@ const Hero = () => {
           </p>
         </div>
         <div>
-          // <button className="font-medium text-lg">Read about me</button>
+          <button className="font-medium text-lg">Read about me</button>
         </div>
       </div>
       <div>
